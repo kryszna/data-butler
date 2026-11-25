@@ -21,7 +21,7 @@ BRANCH = "main"
 API = "https://api.github.com"
 SITE_DIR = os.path.dirname(os.path.abspath(__file__))
 TOKEN = ""
-FILES = ["index.html", "README.md", "deploy_gitee.py", "deploy_github.py"]
+FILES = ["index.html", "README.md", "deploy_github.py"]
 
 
 def mask(text):
