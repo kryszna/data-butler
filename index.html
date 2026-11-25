@@ -156,7 +156,7 @@
       <a href="#features">功能</a>
       <a href="#preview">预览</a>
       <a href="#download">下载</a>
-      <a href="https://gitee.com" target="_blank" rel="noopener">Gitee</a>
+      <a href="https://github.com/kryszna/data-butler" target="_blank" rel="noopener">GitHub</a>
     </nav>
     <div class="nav-right">
       <button class="btn btn-dark" onclick="document.getElementById('download').scrollIntoView()">下载</button>
@@ -189,7 +189,7 @@
         </div>
       </div>
     </div>
-    <div class="note">安装包托管于 Gitee Releases · 免费下载</div>
+    <div class="note">安装包托管于 GitHub Releases · 免费下载</div>
 
     <div class="preview" id="preview">
       <div class="app">
@@ -247,7 +247,7 @@
       <div>
         <h2>下载数据管家</h2>
         <p>当前提供 macOS 安装包，下载后打开即可使用。首次启动会自动准备运行环境，无需额外配置。</p>
-        <p style="margin-top:18px;font-size:12.5px;color:var(--ink3)">安装包来自 Gitee Releases，页面本身为静态站点，可自由部署。</p>
+        <p style="margin-top:18px;font-size:12.5px;color:var(--ink3)">安装包来自 GitHub Releases，页面本身为静态站点，可自由部署。</p>
       </div>
       <div class="dl-list">
         <div class="dl-item">
@@ -277,30 +277,30 @@
 
 <footer>
   <div class="wrap">
-    <p>数据管家 · 静态演示页 · 安装包来源于 <a href="https://gitee.com" target="_blank" rel="noopener">Gitee Releases</a></p>
+    <p>数据管家 · 静态演示页 · 安装包来源于 <a href="https://github.com/kryszna/data-butler/releases" target="_blank" rel="noopener">GitHub Releases</a></p>
   </div>
 </footer>
 
 <div class="toast" id="toast"></div>
 
 <script>
-/* ===== 下载配置：把下面三项改成你的 Gitee 仓库信息即可 ===== */
-var GITEE = {
-  owner : "gfdaily",        // Gitee 用户名（个人空间地址）
+/* ===== 下载配置：对应 GitHub 仓库信息 ===== */
+var GITHUB = {
+  owner : "kryszna",        // GitHub 用户名
   repo  : "data-butler",    // 仓库名
-  tag   : "v1.0",           // Release 标签
+  tag   : "v1.0.0",         // Release 标签
   file  : "数据管家.dmg"     // 附件文件名
 };
 /* 下载源是否就绪：当前仅部署页面，安装包尚未上传，先显示占位提示。
-   等安装包上传到 Gitee Releases 后，把 false 改成 true 即可启用下载。 */
+   等安装包上传到 GitHub Releases 后，把 false 改成 true 即可启用下载。 */
 var DOWNLOAD_READY = false;
 /* 直接跳转到 Releases 列表页；若想直链附件，见下方 directUrl() */
 function releaseUrl(){
-  return "https://gitee.com/" + GITEE.owner + "/" + GITEE.repo + "/releases";
+  return "https://github.com/" + GITHUB.owner + "/" + GITHUB.repo + "/releases";
 }
 function directUrl(){
-  return "https://gitee.com/" + GITEE.owner + "/" + GITEE.repo +
-         "/releases/download/" + GITEE.tag + "/" + encodeURIComponent(GITEE.file);
+  return "https://github.com/" + GITHUB.owner + "/" + GITHUB.repo +
+         "/releases/download/" + GITHUB.tag + "/" + encodeURIComponent(GITHUB.file);
 }
 /* ========================================================== */
 
@@ -324,9 +324,9 @@ function pick(kind){
       toast('安装包即将上线，敬请期待');
       return;
     }
-    if(!GITEE.owner || GITEE.owner==='YOUR_NAME'){
-      toast('请先在页面脚本中设置你的 Gitee 仓库地址');
-      window.open('https://gitee.com','_blank','noopener');
+    if(!GITHUB.owner || GITHUB.owner==='YOUR_NAME'){
+      toast('请先在页面脚本中设置你的 GitHub 仓库地址');
+      window.open('https://github.com','_blank','noopener');
       return;
     }
     window.open(releaseUrl(),'_blank','noopener');
