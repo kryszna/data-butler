@@ -189,7 +189,7 @@
         </div>
       </div>
     </div>
-    <div class="note">安装包托管于 GitHub Releases · 免费下载</div>
+    <div class="note">安装包托管于 GitHub Releases · 免费下载 · <a href="#" onclick="window.open(tagsUrl(),'_blank','noopener');return false;">查看全部版本</a></div>
 
     <div class="preview" id="preview">
       <div class="app">
@@ -288,15 +288,18 @@
 var GITHUB = {
   owner : "kryszna",        // GitHub 用户名
   repo  : "data-butler",    // 仓库名
-  tag   : "v1.0.0",         // Release 标签
+  tag   : "v1.0.1",         // Release 标签
   file  : "数据管家.dmg"     // 附件文件名
 };
-/* 下载源是否就绪：当前仅部署页面，安装包尚未上传，先显示占位提示。
-   等安装包上传到 GitHub Releases 后，把 false 改成 true 即可启用下载。 */
-var DOWNLOAD_READY = false;
-/* 直接跳转到 Releases 列表页；若想直链附件，见下方 directUrl() */
+/* 安装包已上传到 GitHub Releases，下载按钮已启用。 */
+var DOWNLOAD_READY = true;
+/* 跳转到当前版本的 Release 页（可看到附件与更新说明）；直链见 directUrl() */
 function releaseUrl(){
-  return "https://github.com/" + GITHUB.owner + "/" + GITHUB.repo + "/releases";
+  return "https://github.com/" + GITHUB.owner + "/" + GITHUB.repo +
+         "/releases/tag/" + encodeURIComponent(GITHUB.tag);
+}
+function tagsUrl(){
+  return "https://github.com/" + GITHUB.owner + "/" + GITHUB.repo + "/tags";
 }
 function directUrl(){
   return "https://github.com/" + GITHUB.owner + "/" + GITHUB.repo +
