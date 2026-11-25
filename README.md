@@ -6,6 +6,13 @@
 
 下载页面：https://kryszna.github.io/data-butler/
 
+## 版本
+
+所有历史版本与安装包都在 GitHub Releases / Tags 中管理，软件内的更新检查也以最新 Release 为准：
+
+- 最新版本：https://github.com/kryszna/data-butler/releases/latest
+- 全部版本标签：https://github.com/kryszna/data-butler/tags
+
 ## 功能
 
 - 短剧：榜单、分类、搜索、在线播放与自动连播
