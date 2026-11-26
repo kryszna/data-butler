@@ -400,12 +400,16 @@ function toast(msg){
 function pick(kind){
   var d = document.getElementById('drop');
   if (d) d.classList.remove('open');
-  if (kind === 'apple' || kind === 'mac'){
+  if (kind === 'apple'){
     if (!DOWNLOAD_READY){
       toast('安装包即将上线，敬请期待');
       return;
     }
     window.location.href = directUrl();
+    return;
+  }
+  if (kind === 'mac'){
+    toast('请选择芯片类型：Mac Apple 芯片 或 Mac Intel 芯片');
     return;
   }
   if (kind === 'intel'){
